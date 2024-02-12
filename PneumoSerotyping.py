@@ -27,7 +27,7 @@ for input_file in input_files:
         os.makedirs(output_assembly_dir, exist_ok=True)
 
         # Step 1: Run Flye
-        flye_command = f"flye --nano-hq {input_fastq} --out-dir {output_assembly_dir}"
+        flye_command = f"flye --nano-raw {input_fastq} --out-dir {output_assembly_dir}"
         try:
             subprocess.run(flye_command, shell=True, check=True)
         except subprocess.CalledProcessError as e:
